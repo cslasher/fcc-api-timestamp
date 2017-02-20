@@ -11,23 +11,6 @@ app.get('/', function (req, res) {
 })
 
 app.get('/:timeParam', function (req, res) {
-  // if (dateTime/1000 > 0) {
-  //   json = {
-  //       unix: dateTime/1000,
-  //       natural: dateTime.toLocaleString(locale, { month: "long" }) + " " + dateTime.getDay() + ", " + dateTime.getFullYear()
-  //   }
-  // }
-
-  // console.log("json:" + json)
-  // res.end(req.params.timeParam, function(data) {
-  //     var dateTime = Date(data)
-  // if (dateTime/1000 > 0) {
-  //   json = {
-  //       unix: dateTime/1000,
-  //       natural: dateTime.toLocaleString(locale, { month: "long" }) + " " + dateTime.getDay() + ", " + dateTime.getFullYear()
-  //   }
-  // }
-  // })
   var time = req.params.timeParam
   res.end(naturalTime(time))
 })
