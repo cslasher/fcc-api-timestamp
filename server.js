@@ -11,31 +11,16 @@ app.get('/', function (req, res) {
 })
 
 app.get('/:timeParam', function (req, res) {
-  // if (dateTime/1000 > 0) {
-  //   json = {
-  //       unix: dateTime/1000,
-  //       natural: dateTime.toLocaleString(locale, { month: "long" }) + " " + dateTime.getDay() + ", " + dateTime.getFullYear()
-  //   }
-  // }
-
-  // console.log("json:" + json)
-  // res.end(req.params.timeParam, function(data) {
-  //     var dateTime = Date(data)
-  // if (dateTime/1000 > 0) {
-  //   json = {
-  //       unix: dateTime/1000,
-  //       natural: dateTime.toLocaleString(locale, { month: "long" }) + " " + dateTime.getDay() + ", " + dateTime.getFullYear()
-  //   }
-  // }
-  // })
   var time = req.params.timeParam
   res.end(naturalTime(time))
 })
 
-app.listen(process.env.PORT|3000, function () {
-  console.log(`Timestamp app listening on port ${process.env.PORT|3000}!`)
+app.listen(process.env.PORT, function () {
+  console.log(`Timestamp app listening on port ${process.env.PORT}!`)
 })
+
 function naturalTime(time) {
+  var dateTime
   if (isNaN(time)) {
     dateTime = new Date(Date.parse(time))
   } else {
