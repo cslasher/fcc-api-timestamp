@@ -26,6 +26,6 @@ function naturalTime(time) {
   }
 
   json.unix = dateTime.getTime() / 1000
-  json.natural = dateTime.toLocaleString(locale, { month: "long" }) + " " + dateTime.getDay() + ", " + dateTime.getFullYear()
+  json.natural = dateTime.toLocaleString(locale, { month: "long" }) + " " + dateTime.getDate() + ", " + dateTime.getFullYear()
   return JSON.stringify(json)
 }
